@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/autoload/plugged')
+Plug 'https://github.com/Shougo/unite.vim.git'
 Plug 'https://github.com/junegunn/goyo.vim.git'
 Plug 'https://github.com/plasticboy/vim-markdown.git'
 Plug 'git://github.com/tpope/vim-surround.git'
@@ -7,6 +8,9 @@ Plug 'https://github.com/vim-scripts/dokuwiki.vim.git'
 Plug 'https://github.com/reedes/vim-wordy.git'
 Plug 'https://github.com/reedes/vim-textobj-quote.git'
 Plug 'https://github.com/kana/vim-textobj-user.git'
+Plug 'https://github.com/Shougo/vimfiler.vim.git'
+Plug 'https://github.com/junegunn/limelight.vim.git'
+Plug 'https://github.com/junegunn/seoul256.vim.git'
 call plug#end()
 
 set nocompatible
@@ -25,6 +29,10 @@ augroup textobj_quote
   autocmd FileType textile call textobj#quote#init()
   autocmd FileType text call textobj#quote#init({'educate': 0})
 augroup END
+
+colo seoul256
+
+set background=dark
 
 :set tabstop=4 shiftwidth=4 expandtab
 :set number
