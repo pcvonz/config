@@ -11,6 +11,7 @@ Plug 'https://github.com/kana/vim-textobj-user.git'
 Plug 'https://github.com/Shougo/vimfiler.vim.git'
 Plug 'https://github.com/junegunn/limelight.vim.git'
 Plug 'https://github.com/junegunn/seoul256.vim.git'
+Plug 'https://github.com/benmills/vimux.git'
 call plug#end()
 
 set nocompatible
@@ -23,12 +24,6 @@ augroup pencil
   autocmd FileType text         call pencil#init()
 augroup END
 
-augroup textobj_quote
-  autocmd!
-  autocmd FileType markdown call textobj#quote#init()
-  autocmd FileType textile call textobj#quote#init()
-  autocmd FileType text call textobj#quote#init({'educate': 0})
-augroup END
 
 colo seoul256
 
