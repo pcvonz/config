@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/vonzimp/config'
+let g:netrw_dirhist_2='/home/vonzimp/pattern_lab_playground'
+let g:netrw_dirhist_3='/home/vonzimp/pattern_lab_playground/source/css/scss/layouts'
+let g:netrw_dirhist_4='/home/vonzimp/pattern_lab_playground/source/images/western_logo.png'
+let g:netrw_dirhist_5='/home/vonzimp/pattern_lab_playground/source/_data'
+let g:netrw_dirhist_6='/home/vonzimp/pattern_lab_playground/source/css/sass/modules'

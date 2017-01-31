@@ -12,6 +12,7 @@ Plug 'https://github.com/Shougo/vimfiler.vim.git'
 Plug 'https://github.com/junegunn/limelight.vim.git'
 Plug 'https://github.com/junegunn/seoul256.vim.git'
 Plug 'https://github.com/benmills/vimux.git'
+Plug 'https://github.com/scrooloose/nerdtree.git'
 call plug#end()
 
 set nocompatible
@@ -29,5 +30,8 @@ colo seoul256
 
 set background=dark
 
-:set tabstop=4 shiftwidth=4 expandtab
+:set tabstop=2 shiftwidth=2 expandtab
 :set number
+
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = '`'
