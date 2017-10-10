@@ -20,6 +20,7 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/pangloss/vim-javascript.git'
 Plug 'https://github.com/fholgado/minibufexpl.vim.git'
+Plug 'https://github.com/joonty/vdebug.git'
 call plug#end()
 
 set nocompatible
