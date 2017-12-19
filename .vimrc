@@ -15,7 +15,6 @@ Plug 'https://github.com/Shougo/unite.vim.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/junegunn/seoul256.vim.git'
 Plug 'https://github.com/benmills/vimux.git'
-Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/pangloss/vim-javascript.git'
 Plug 'https://github.com/mildred/vim-bufmru.git'
@@ -25,11 +24,16 @@ Plug 'https://github.com/Shougo/denite.nvim.git'
 " Plug 'https://github.com/joonty/vdebug.git'
 "
 Plug 'https://github.com/leafgarland/typescript-vim.git'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 call plug#end()
 
 set nocompatible
 set smartcase
 filetype plugin on       " may already be in your .vimrc
+
+" Some custom inputs
+
+nmap <C-x> :bd <CR>
 
 " Initiate deoplete
 let g:deoplete#enable_at_startup = 1
@@ -67,8 +71,6 @@ augroup END
 let g:ale_linters = {'vue': ['stylelint', 'eslint']}
 let g:ale_linter_aliases = {'vue': 'css'}
 
-nmap <F8> :TagbarToggle<CR>
-
 colo seoul256
 
 set background=dark
@@ -80,14 +82,10 @@ set number
 autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 set mouse=a
 
-" Nerdtree command
-map <C-n> :NERDTreeToggle<CR>
-
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 
 
-autocmd vimenter * NERDTree
 
 set background=dark
 set t_Co=256
@@ -113,3 +111,13 @@ map <S-Tab> :BufMRUPrev<CR>
 
 " Options needed for ctrl+space
 set hidden
+
+" Unite options
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>r :<C-u>Unite -start-insert file_rec/async:!<CR>
+" Search for a file in the current directory
+nnoremap <leader>f :<C-u>Unite file<CR>
+" Open recently used files
+nnoremap <silent> <leader>b :<C-u>Unite buffer bookmark<CR>
+nnoremap <leader>g :<C-u>Unite grep<CR>
+
