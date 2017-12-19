@@ -9,21 +9,26 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'https://github.com/w0rp/ale.git'
 Plug 'https://github.com/vim-airline/vim-airline.git' " Setting status messages in a line
 " Stuff for web design
-Plug 'git://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/mattn/emmet-vim.git'
 Plug 'https://github.com/posva/vim-vue.git'
 Plug 'https://github.com/Shougo/unite.vim.git'
-Plug 'git://github.com/tpope/vim-surround.git'
+Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/junegunn/seoul256.vim.git'
 Plug 'https://github.com/benmills/vimux.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/pangloss/vim-javascript.git'
-Plug 'https://github.com/fholgado/minibufexpl.vim.git'
-Plug 'https://github.com/joonty/vdebug.git'
+Plug 'https://github.com/mildred/vim-bufmru.git'
+Plug 'https://github.com/mhinz/vim-signify.git'
+Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'https://github.com/Shougo/denite.nvim.git'
+" Plug 'https://github.com/joonty/vdebug.git'
+"
+Plug 'https://github.com/leafgarland/typescript-vim.git'
 call plug#end()
 
 set nocompatible
+set smartcase
 filetype plugin on       " may already be in your .vimrc
 
 " Initiate deoplete
@@ -32,7 +37,8 @@ let g:neosnippet#enable_completed_snippet = 1
 let g:python_host_prog = '/usr/bin/python3'
 
 let g:ale_fixers = {
-\ 'javascript': ['eslint']
+\ 'javascript': ['eslint'],
+\ 'typescript': ['eslint'],
 \}
 
 " Flow deoplete
@@ -67,19 +73,43 @@ colo seoul256
 
 set background=dark
 
-:set tabstop=2 shiftwidth=2
-:set expandtab
-:set softtabstop=0 smarttab
-:set number
+set tabstop=2 shiftwidth=2
+set expandtab
+set softtabstop=0 smarttab
+set number
 autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-:set mouse=a
+set mouse=a
 
 " Nerdtree command
 map <C-n> :NERDTreeToggle<CR>
 
-" minibufexpl
-map <S-z> :bNext <CR>
-map <S-x> :bnext <CR>
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+
 
 autocmd vimenter * NERDTree
-autocmd vimenter * MBEOpen
+
+set background=dark
+set t_Co=256
+let g:airline_section_x       = ""
+let g:airline_section_y       = ""
+
+" Bufmru (load buffers in last used order)
+" Alt-B or Alt-Shift-B to navigate buffers in insert mode and normal mode
+imap <A-B> <C-O>:BufMRUPrev<CR>
+imap <A-b> <C-O>:BufMRUNext<CR>
+map <A-B> :BufMRUPrev<CR>
+map <A-b> :BufMRUNext<CR>
+nmap <Esc>B :BufMRUPrev<CR>
+nmap <Esc>b :BufMRUNext<CR>
+
+" Key above escape (on french keyboards) to commit current buffer as last
+" used
+map ² :BufMRUCommit<CR>
+
+" Tab and Shift-Tab in normal mode to navigate buffers
+map <Tab> :BufMRUNext<CR>
+map <S-Tab> :BufMRUPrev<CR>
+
+" Options needed for ctrl+space
+set hidden
