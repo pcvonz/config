@@ -42,33 +42,33 @@ filetype plugin on       " may already be in your .vimrc
 nmap <C-x> :bd <CR>
 
 " Initiate deoplete
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 let g:neosnippet#enable_completed_snippet = 1
 let g:python_host_prog = '/usr/bin/python3'
 
-let g:ale_fixers = {
-\ 'javascript': ['eslint'],
-\ 'typescript': ['tslint', 'eslint'],
-\}
+" let g:ale_fixers = {
+" \ 'javascript': ['eslint'],
+" \ 'typescript': ['tslint', 'eslint'],
+" \}
 
-let g:ale_completion_enabled = 1
+" let g:ale_completion_enabled = 1
 
 " Flow deoplete
-function! StrTrim(txt)
-    return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-  endfunction
-
-  let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
-
-  if g:flow_path != 'flow not found'
-      let g:deoplete#sources#flow#flow_bin = g:flow_path
-    endif
+" function! StrTrim(txt)
+"     return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+"   endfunction
+" 
+"   let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
+" 
+"   if g:flow_path != 'flow not found'
+"       let g:deoplete#sources#flow#flow_bin = g:flow_path
+"     endif
 
 " Ale bindings
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-nmap <C-f> <Plug>(ale_fix)
-let g:airline#extensions#ale#enabled = 1
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" nmap <C-f> <Plug>(ale_fix)
+" let g:airline#extensions#ale#enabled = 1
 
 " Ale lint vue
 augroup FiletypeGroup
@@ -91,7 +91,7 @@ autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 set mouse=a
 
 " Airline
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 
 
 
