@@ -30,6 +30,7 @@ Plug 'https://github.com/vim-scripts/taglist.vim.git'
 Plug 'https://github.com/mattn/vim-mastodon.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/wlangstroth/vim-racket.git'
+Plug 'https://github.com/junegunn/vim-easy-align.git'
 call plug#end()
 
 set nocompatible
@@ -214,3 +215,9 @@ let g:ale_cs_mcsc_assemblies = [
     \ '/home/paul/godot_proj/.mono/assemblies/GodotSharp.dll',
     \]
 
+" Eeasy Align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
