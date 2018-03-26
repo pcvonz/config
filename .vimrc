@@ -7,7 +7,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 " Linting
 Plug 'https://github.com/w0rp/ale.git'
-Plug 'https://github.com/vim-airline/vim-airline.git' " Setting status messages in a line
+" Plug 'https://github.com/vim-airline/vim-airline.git' " Setting status messages in a line
 " Stuff for web design
 Plug 'https://github.com/mattn/emmet-vim.git'
 Plug 'https://github.com/posva/vim-vue.git'
@@ -31,6 +31,9 @@ Plug 'https://github.com/mattn/vim-mastodon.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/wlangstroth/vim-racket.git'
 Plug 'https://github.com/junegunn/vim-easy-align.git'
+Plug 'https://github.com/tpope/vim-commentary.git'
+Plug 'https://github.com/tpope/vim-eunuch.git'
+Plug 'https://github.com/tpope/vim-repeat.git'
 call plug#end()
 
 set nocompatible
@@ -46,12 +49,12 @@ nmap <C-x> :bd <CR>
 let g:neosnippet#enable_completed_snippet = 1
 let g:python_host_prog = '/usr/bin/python3'
 
-" let g:ale_fixers = {
-" \ 'javascript': ['eslint'],
-" \ 'typescript': ['tslint', 'eslint'],
-" \}
+let g:ale_fixers = {
+\ 'javascript': ['eslint'],
+\ 'typescript': ['tslint', 'eslint'],
+\}
 
-" let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 1
 
 " Flow deoplete
 " function! StrTrim(txt)
@@ -65,9 +68,9 @@ let g:python_host_prog = '/usr/bin/python3'
 "     endif
 
 " Ale bindings
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
-" nmap <C-f> <Plug>(ale_fix)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <C-f> <Plug>(ale_fix)
 " let g:airline#extensions#ale#enabled = 1
 
 " Ale lint vue
@@ -91,14 +94,14 @@ autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 set mouse=a
 
 " Airline
-let g:airline#extensions#tabline#enabled = 0
+" let g:airline#extensions#tabline#enabled = 0
 
 
 
 set background=dark
 set t_Co=256
-let g:airline_section_x       = ""
-let g:airline_section_y       = ""
+" let g:airline_section_x       = ""
+" let g:airline_section_y       = ""
 
 " Bufmru (load buffers in last used order)
 " Alt-B or Alt-Shift-B to navigate buffers in insert mode and normal mode
@@ -221,3 +224,9 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Neovim git commit 
+
+if has('nvim')
+  let $VISUAL = 'nvr -cc split --remote-wait'
+endif
