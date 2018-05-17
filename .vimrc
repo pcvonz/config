@@ -54,18 +54,12 @@ let g:ale_fixers = {
 \ 'typescript': ['tslint', 'eslint'],
 \}
 
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
 let g:ale_completion_enabled = 1
 
-" Flow deoplete
-" function! StrTrim(txt)
-"     return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-"   endfunction
-" 
-"   let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
-" 
-"   if g:flow_path != 'flow not found'
-"       let g:deoplete#sources#flow#flow_bin = g:flow_path
-"     endif
+nnoremap <leader>gf :ALEGoToDefinition<cr>
 
 " Ale bindings
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
@@ -125,7 +119,7 @@ set hidden
 
 " Unite options
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>r :<C-u>Unite file_rec<CR>
+nnoremap <leader>r :<C-u>Unite file_rec/neovim<CR>
 " Search for a file in the current directory
 nnoremap <leader>f :<C-u>Unite file<CR>
 " Open recently used files
@@ -225,8 +219,8 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" Neovim git commit 
-
-if has('nvim')
-  let $VISUAL = 'nvr -cc split --remote-wait'
+if has('nvim') && executable('nvr')
+  let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
+
+
