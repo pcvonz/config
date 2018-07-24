@@ -28,8 +28,8 @@ Plug 'https://github.com/tpope/vim-repeat.git'
 Plug 'https://github.com/morhetz/gruvbox.git'
 call plug#end()
 
-source ~/config/keys.vimrc
-source ~/config/bufonly.vimrc
-source ~/config/general.vimrc
-source ~/config/plugins.vimrc
+source ~/config/nvim/keys.vimrc
+source ~/config/nvim/bufonly.vimrc
+source ~/config/nvim/general.vimrc
+source ~/config/nvim/plugins.vimrc
 
