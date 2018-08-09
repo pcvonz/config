@@ -1,8 +1,9 @@
 call plug#begin('~/.vim/autoload/plugged')
-Plug 'https://github.com/steelsojka/deoplete-flow.git'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'https://github.com/steelsojka/deoplete-flow.git'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Linting
 Plug 'https://github.com/w0rp/ale.git'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'https://github.com/vim-airline/vim-airline.git' " Setting status messages in a line
 " Stuff for web design
 Plug 'https://github.com/mattn/emmet-vim.git'
@@ -11,6 +12,7 @@ Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/junegunn/seoul256.vim.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/pangloss/vim-javascript.git'
+Plug 'mxw/vim-jsx'
 Plug 'https://github.com/mhinz/vim-signify.git'
 Plug 'shougo/denite.nvim' 
 Plug 'https://github.com/leafgarland/typescript-vim.git'

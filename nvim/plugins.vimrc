@@ -3,7 +3,7 @@
 """""
 
 let g:ale_fixers = {
-\ 'javascript': ['eslint'],
+\ 'javascript': ['eslint', 'prettier'],
 \ 'typescript': ['tslint', 'eslint'],
 \}
 
@@ -11,6 +11,9 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
 let g:ale_open_list = 1
 let g:ale_completion_enabled = 1
+" Because vim loves to insert the autocompletion value...
+set completeopt=menu,menuone,preview,noselect,noinsert
+
 
 let g:airline#extensions#ale#enabled = 1
 
@@ -68,3 +71,8 @@ nmap ga <Plug>(EasyAlign)
 """""""""
 let g:airline_section_x = ""
 let g:airline_section_y = ""
+
+""""""""""""""
+"EDITORCONFIG"
+""""""""""""""
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
