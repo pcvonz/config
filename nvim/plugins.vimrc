@@ -76,3 +76,10 @@ let g:airline_section_y = ""
 "EDITORCONFIG"
 """"""""""""""
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+
+"""""""""""
+"VIM EMOJI"
+"""""""""""
+set completefunc=emoji#complete
+

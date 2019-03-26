@@ -39,5 +39,6 @@ augroup vimrc
   autocmd BufWritePre /tmp/* setlocal noundofile
 augroup END
 
-let g:python_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/home/paul/Programs/pyvenv/venv/bin/python'
 
