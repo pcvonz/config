@@ -12,7 +12,7 @@ nmap <C-f> <Plug>(ale_fix)
 """""""""""""""""
 
 
-nnoremap <leader>r :<C-u>Denite file_rec<CR><C-L>
+nnoremap <leader>r :<C-u>Denite file/rec<CR><C-L>
 " Search for a file in the current directory
 nnoremap <leader>f :<C-u>Denite directory_rec<CR>
 " Open recently used files

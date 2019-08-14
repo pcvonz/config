@@ -18,6 +18,7 @@ filetype plugin on       " may already be in your .vimrc
 """""""""""""""""
 
 autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype gdscript3 setlocal autoindent tabstop=4 shiftwidth=4 noexpandtab
 
 """""
 "NVR"
@@ -40,4 +41,5 @@ augroup vimrc
 augroup END
 
 let g:python_host_prog = '/usr/bin/python3'
+
 
