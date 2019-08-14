@@ -4,13 +4,14 @@
 
 let g:ale_fixers = {
 \ 'javascript': ['eslint', 'prettier'],
-\ 'typescript': ['tslint', 'eslint'],
+\ 'typescript': ['tslint', 'eslint']
 \}
 
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
-let g:ale_open_list = 1
+let g:ale_open_list = 0
 let g:ale_completion_enabled = 1
+let g:ale_c_parse_makefile = 1
 " Because vim loves to insert the autocompletion value...
 set completeopt=menu,menuone,preview,noselect,noinsert
 
@@ -71,6 +72,23 @@ function! s:denite_filter_my_settings() abort
   imap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
 endfunction
 
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
+
 """""""""""""
 "Eeasy Align"
 """""""""""""
@@ -93,9 +111,20 @@ let g:airline_section_y = ""
 """"""""""""""
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-
 """""""""""
 "VIM EMOJI"
 """""""""""
 set completefunc=emoji#complete
 
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+"""""""""""""
+" Syntastic "
+"""""""""""""
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
