@@ -18,3 +18,9 @@ nnoremap <leader>f :<C-u>Denite directory_rec<CR>
 " Open recently used files
 nnoremap <silent> <leader>b :<C-u>Denite buffer<CR>
 nnoremap <leader>g :<C-u>Denite grep<CR>
+
+""""""
+"TODO"
+""""""
+
+nmap <F5> :TODOToggle<CR>

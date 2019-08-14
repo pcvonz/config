@@ -21,13 +21,13 @@ Plug 'https://github.com/ap/vim-css-color.git'
 " Plug 'https://github.com/joonty/vdebug.git'
 Plug 'https://github.com/dahu/vim-help'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'https://github.com/vim-scripts/taglist.vim.git'
 Plug 'https://github.com/wlangstroth/vim-racket.git'
 Plug 'https://github.com/junegunn/vim-easy-align.git'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-eunuch.git'
 Plug 'https://github.com/tpope/vim-repeat.git'
 Plug 'junegunn/vim-emoji'
+Plug 'https://github.com/Dimercel/todo-vim.git'
 
 "" Color schemes
 Plug 'https://github.com/morhetz/gruvbox.git'
@@ -37,4 +37,3 @@ source ~/config/nvim/keys.vimrc
 source ~/config/nvim/bufonly.vimrc
 source ~/config/nvim/general.vimrc
 source ~/config/nvim/plugins.vimrc
-

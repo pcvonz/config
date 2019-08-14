@@ -27,7 +27,9 @@ autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 " Open it in an nvim split via nvr
 if has('nvim') && executable('nvr')
   let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+  let $GIT_EDITOR = 'nvr -cc split --remote-wait'
 endif
+
 
 """""""""""""""""
 "Persistant undo"
