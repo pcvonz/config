@@ -46,6 +46,7 @@ Plug 'https://github.com/rust-lang/rust.vim.git'
 Plug 'https://github.com/neomake/neomake.git'
 Plug 'https://github.com/rhysd/vim-grammarous'
 Plug 'vimwiki/vimwiki'
+Plug 'https://github.com/mtikekar/nvim-send-to-term.git'
 call plug#end()
 
 let g:python3_host_prog = '/home/paul/config/env/bin/python'

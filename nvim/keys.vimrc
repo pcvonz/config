@@ -24,3 +24,9 @@ nnoremap <leader>g :<C-u>Denite grep<CR>
 """"""
 
 nmap <F5> :TODOToggle<CR>
+
+""""""
+"REPL"
+""""""
+
+nmap <leader>s :%ReplSend<CR>
