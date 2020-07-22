@@ -30,3 +30,28 @@ nmap <F5> :TODOToggle<CR>
 """"""
 
 nmap <leader>s :%ReplSend<CR>
+
+""""
+" Format Json
+""""
+
+vnoremap <leader>j :!python -m json.tool<CR>
+vnoremap <leader>r :!refmt<CR>
+
+
+"""""
+" Bind K to pydoc in python files
+"""""
+autocmd BufNewFile,BufRead *.py set keywordprg=pydoc
+
+"""
+" Make
+""""
+
+nnoremap <leader>w :make run<CR>
+nnoremap <leader>cn :cn<CR>
+nnoremap <leader>cp :cp<CR>
+
+" Wiki
+"
+nnoremap <leader>wd :VimwikiDiaryIndex<CR>

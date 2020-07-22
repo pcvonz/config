@@ -3,7 +3,7 @@ call plug#begin('~/.vim/autoload/plugged')
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Linting
 Plug 'https://github.com/chiedo/vim-sort-blocks-by.git'
-Plug 'https://github.com/w0rp/ale.git'
+" Plug 'https://github.com/w0rp/ale.git'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'https://github.com/vim-airline/vim-airline.git' " Setting status messages in a line
 " Stuff for web design
@@ -47,9 +47,18 @@ Plug 'https://github.com/neomake/neomake.git'
 Plug 'https://github.com/rhysd/vim-grammarous'
 Plug 'vimwiki/vimwiki'
 Plug 'https://github.com/mtikekar/nvim-send-to-term.git'
+Plug 'https://github.com/leafOfTree/vim-svelte-plugin.git'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'https://github.com/OmniSharp/omnisharp-vim.git'
+Plug 'reasonml-editor/vim-reason-plus'
+Plug 'sbdchd/neoformat'
+Plug 'psliwka/vim-smoothie'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'https://github.com/ryanoasis/vim-devicons.git'
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
+Plug 'janko-m/vim-test'
+Plug 'https://github.com/jceb/vim-orgmode.git'
 call plug#end()
-
-let g:python3_host_prog = '/home/paul/config/env/bin/python'
 
 source ~/config/nvim/keys.vimrc
 source ~/config/nvim/bufonly.vimrc
@@ -57,21 +66,26 @@ source ~/config/nvim/general.vimrc
 source ~/config/nvim/plugins.vimrc
 
 augroup pencil
- autocmd!
- autocmd filetype markdown,mkd call pencil#init()
-     \ | call lexical#init()
-     \ | call litecorrect#init()
-     \ | setl spell spl=en_us fdl=4 noru nonu nornu
-     \ | setl fdo+=search
+  autocmd!
+  autocmd filetype markdown,mkd,vimwiki call pencil#init()
+        \ | call lexical#init()
+        \ | call litecorrect#init()
+        \ | setl spell spl=en_us fdl=4 noru nonu nornu
+        \ | setl fdo+=search
 augroup END
 
 " Pencil / Writing Controls {{{
- let g:pencil#wrapModeDefault = 'soft'
- let g:pencil#textwidth = 74
- let g:pencil#joinspaces = 0
- let g:pencil#cursorwrap = 1
- let g:pencil#conceallevel = 3
- let g:pencil#concealcursor = 'c'
- let g:pencil#softDetectSample = 20
- let g:pencil#softDetectThreshold = 130
+let g:pencil#wrapModeDefault = 'soft'
+let g:pencil#textwidth = 74
+let g:pencil#joinspaces = 0
+let g:pencil#cursorwrap = 1
+let g:pencil#conceallevel = 3
+let g:pencil#concealcursor = 'c'
+let g:pencil#softDetectSample = 20
+let g:pencil#softDetectThreshold = 130
 " }}}
+
+set guifont=Fira\ Code:h14
+let g:neovide_cursor_vfx_mode = "wireframe"
+set tgc
+set dictionary=/usr/share/dict/cracklib-small
