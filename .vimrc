@@ -58,6 +58,9 @@ Plug 'https://github.com/ryanoasis/vim-devicons.git'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'janko-m/vim-test'
 Plug 'https://github.com/jceb/vim-orgmode.git'
+Plug 'sheerun/vim-polyglot'
+Plug 'beeender/Comrade'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 source ~/config/nvim/keys.vimrc
@@ -89,3 +92,5 @@ set guifont=Fira\ Code:h14
 let g:neovide_cursor_vfx_mode = "wireframe"
 set tgc
 set dictionary=/usr/share/dict/cracklib-small
+autocmd BufNew,BufEnter *.java execute "call deoplete#enable() | !silent CocDisable"
+autocmd BufLeave *.cs execute "call deoplete#disable() | !silent CocEnable"
