@@ -46,7 +46,6 @@ Plug 'https://github.com/rust-lang/rust.vim.git'
 Plug 'https://github.com/neomake/neomake.git'
 Plug 'https://github.com/rhysd/vim-grammarous'
 Plug 'vimwiki/vimwiki'
-Plug 'https://github.com/mtikekar/nvim-send-to-term.git'
 Plug 'https://github.com/leafOfTree/vim-svelte-plugin.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/OmniSharp/omnisharp-vim.git'
@@ -58,6 +57,9 @@ Plug 'https://github.com/ryanoasis/vim-devicons.git'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'janko-m/vim-test'
 Plug 'https://github.com/jceb/vim-orgmode.git'
+Plug 'https://github.com/jpalardy/vim-slime.git'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'bakpakin/fennel.vim'
 call plug#end()
 
 source ~/config/nvim/keys.vimrc
@@ -89,3 +91,4 @@ set guifont=Fira\ Code:h14
 let g:neovide_cursor_vfx_mode = "wireframe"
 set tgc
 set dictionary=/usr/share/dict/cracklib-small
+let g:slime_target = "neovim"
