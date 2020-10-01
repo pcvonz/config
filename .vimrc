@@ -60,6 +60,9 @@ Plug 'https://github.com/jceb/vim-orgmode.git'
 Plug 'https://github.com/jpalardy/vim-slime.git'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'bakpakin/fennel.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'beeender/Comrade'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 source ~/config/nvim/keys.vimrc
@@ -92,3 +95,5 @@ let g:neovide_cursor_vfx_mode = "wireframe"
 set tgc
 set dictionary=/usr/share/dict/cracklib-small
 let g:slime_target = "neovim"
+autocmd BufNew,BufEnter *.java execute "call deoplete#enable() | !silent CocDisable"
+autocmd BufLeave *.cs execute "call deoplete#disable() | !silent CocEnable"
