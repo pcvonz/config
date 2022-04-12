@@ -1,35 +1,8 @@
-"""""
-"ALE"
-"""""
-
-let g:ale_linters = {
-\ 'cs': ['OmniSharp']
-\}
-
-let g:ale_fixers = {
-\ 'javascript': ['eslint', 'prettier'],
-\ 'typescript': ['tslint', 'eslint']
-\}
-
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 0
-let g:ale_open_list = 0
-let g:ale_completion_enabled = 1
-let g:ale_c_parse_makefile = 1
 " Because vim loves to insert the autocompletion value...
 set completeopt=menu,menuone,preview,noselect,noinsert
 
 
 let g:airline#extensions#ale#enabled = 1
-
-" Ale lint vue
-augroup FiletypeGroup
-    autocmd!
-    au BufNewFile,BufRead *.vue set filetype=javascript.vue
-augroup END
-
-" let g:ale_linters = {'vue': ['stylelint', 'eslint']}
-" let g:ale_linter_aliases = {'vue': 'css'}
 
 """"""""
 "DENITE"
@@ -145,7 +118,7 @@ set completefunc=emoji#complete
 " Mono
 """
 let g:OmniSharp_server_stdio = 1
-let g:OmniSharp_server_use_mono = 0
+let g:OmniSharp_server_use_mono = 1
 
 """""""""""""
 " Syntastic "
@@ -231,7 +204,6 @@ nmap <leader>rn <Plug>(coc-rename)
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
@@ -307,11 +279,30 @@ function! NvimGdbNoTKeymaps()
 endfunction
 
 let g:nvimgdb_config_override = {
-  \ 'key_next': 'n',
-  \ 'key_step': 's',
-  \ 'key_finish': 'f',
-  \ 'key_continue': 'c',
-  \ 'key_until': 'u',
-  \ 'key_breakpoint': 'b',
+  \ 'key_next': 'F4',
+  \ 'key_step': 'F5',
+  \ 'key_finish': 'F6',
+  \ 'key_continue': 'F7',
+  \ 'key_until': 'F8',
+  \ 'key_breakpoint': 'F9',
   \ 'set_tkeymaps': "NvimGdbNoTKeymaps",
   \ }
+
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)

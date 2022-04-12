@@ -224,3 +224,4 @@ exec firefox &
 exec thunderbird &
 
 exec_always ~/conf/waybar.sh
+exec_always ~/config/sway/display_start.sh
